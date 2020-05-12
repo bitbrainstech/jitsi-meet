@@ -1,4 +1,4 @@
-package org.jitsi.meet;
+package life.ayusha;
 
 import android.net.Uri;
 import android.util.Log;

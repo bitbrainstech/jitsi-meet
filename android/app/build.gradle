@@ -20,7 +20,7 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        applicationId 'org.jitsi.meet'
+        applicationId 'life.ayusha'
         versionCode vcode
         versionName project.appVersion
 
@@ -39,6 +39,13 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
+        release {
+            storeFile file(AYUSHA_APP_UPLOAD_STORE_FILE)
+            storePassword AYUSHA_APP_UPLOAD_STORE_PASSWORD
+            keyAlias AYUSHA_APP_UPLOAD_KEY_ALIAS
+            keyPassword AYUSHA_APP_UPLOAD_KEY_PASSWORD
+        }
+
     }
 
     buildTypes {
@@ -48,7 +55,7 @@ android {
         }
         release {
             // Uncomment the following line for singing a test release build.
-            //signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules-release.pro'
             buildConfigField "boolean", "GOOGLE_SERVICES_ENABLED", "${googleServicesEnabled}"
